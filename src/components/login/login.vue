@@ -23,8 +23,8 @@ export default {
         }
     }},
     methods:{
-        loginSubmit: function(){
-            this.axios.post('login',this.formData).then(res=>{
+        async loginSubmit(){
+            const res = await this.axios.post('login',this.formData)
                 // console.log(res)
                 const {
                     data,meta:{msg,status}
@@ -33,9 +33,9 @@ export default {
                     this.$message.success(msg)
                     // this.$router.push({name:'home'})
                 }else {
-                     this.$message.error(msg)
+                    this.$message.error(msg)
                 }
-            })
+            
         }
     }
 }
