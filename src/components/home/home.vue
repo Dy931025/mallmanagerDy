@@ -11,7 +11,7 @@
         </el-col>
         <el-col :span="8">
             <div class="grid-content bg-purple loginOut">
-                <el-button type="primary" icon="el-icon-circle-close" @click.prevent='handleOut()'>退出</el-button>
+                <el-button type="primary" icon="el-icon-search" @click.prevent='handleOut()'>退出</el-button>
             </div>
         </el-col>
     </el-header>
@@ -23,7 +23,7 @@
                         <i class="el-icon-location"></i>
                         <span>用户管理</span>
                     </template>
-                    <el-menu-item index="users">
+                    <el-menu-item index="user">
                         <i class="el-icon-menu"></i>
                         <span>用户列表</span>
                     </el-menu-item>
@@ -139,8 +139,6 @@ export default {
 .homeMain {
     background-color: #E9EEF3;
     color: #333;
-    text-align: center;
-    line-height: 160px;
 }
 
 .bg-purple-light {
@@ -154,5 +152,9 @@ export default {
 
 .loginOut {
     float: right;
+}
+
+.box-card {
+    height: 100%;
 }
 </style>
