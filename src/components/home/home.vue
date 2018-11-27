@@ -114,7 +114,7 @@ export default {
         localStorage.clear()
 
         this.$message.success('退出成功！')
-        this.$router.push('login')
+        this.$router.push({name:'login'})
       }
     }
 }
