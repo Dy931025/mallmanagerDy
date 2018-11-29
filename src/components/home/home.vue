@@ -91,29 +91,29 @@
 
 <script>
 export default {
-    beforeCreate() {
-        const token = localStorage.getItem('token')
-        if (!token) {
-            this.$router.push('login')
-        }
-    },
-    methods: {
-        handleOpen(key, keyPath) {
-            console.log(key, keyPath);
-        },
-        handleClose(key, keyPath) {
-            console.log(key, keyPath);
-        },
-        handleOut: function () {
-            //   退出清除本地缓存
-            localStorage.clear()
-
-            this.$message.success('退出成功！')
-            this.$router.push({
-                name: 'login'
-            })
-        }
+  beforeCreate () {
+    const token = sessionStorage.getItem('token')
+    if (!token) {
+      this.$router.push('login')
     }
+  },
+  methods: {
+    handleOpen (key, keyPath) {
+      console.log(key, keyPath)
+    },
+    handleClose (key, keyPath) {
+      console.log(key, keyPath)
+    },
+    handleOut: function () {
+      //   退出清除本地缓存
+      sessionStorage.clear()
+
+      this.$message.success('退出成功！')
+      this.$router.push({
+        name: 'login'
+      })
+    }
+  }
 }
 </script>
 
