@@ -15,30 +15,30 @@
 
 <script>
 export default {
-    data(){
-        return{
-            formData:{
-            username:'',
-            password:''
-        }
-    }},
-    methods:{
-        async loginSubmit(){
-            const res = await this.axios.post('login',this.formData)
-                // console.log(res)
-                const {
-                    data,meta:{msg,status}
-                } = res.data
-                if(status===200) {
-                    localStorage.setItem('token',data.token)
-                    this.$message.success(msg)
-                    this.$router.push({name:'home'})
-                }else {
-                    this.$message.error(msg)
-                }
-            
-        }
+  data () {
+    return {
+      formData: {
+        username: '',
+        password: ''
+      }
     }
+  },
+  methods: {
+    async loginSubmit () {
+      const res = await this.axios.post('login', this.formData)
+      // console.log(res)
+      const {
+        data, meta: {msg, status}
+      } = res.data
+      if (status === 200) {
+        sessionStorage.setItem('token', data.token)
+        this.$message.success(msg)
+        this.$router.push({name: 'home'})
+      } else {
+        this.$message.error(msg)
+      }
+    }
+  }
 }
 </script>
 
